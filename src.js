@@ -4,7 +4,7 @@ import { axios } from "@pipedream/platform";
 export default defineComponent({
   name: "Send Telegram Image to TRMNL",
   description:
-    "Extract an image from a Telegram message and send it to TRMNL in a merge_variables payload",
+    "Extract an image from a Telegram message and send it to TRMNL using a plugin UUID",
   type: "action",
   props: {
     telegram_bot_api,
@@ -14,16 +14,20 @@ export default defineComponent({
       description:
         "The Telegram message object containing the image and caption",
     },
+    plugin_url: {
+      type: "string",
+      label: "TRMNL Plugin UUID",
+      description:
+        "Paste your TRMNL plugin UUID (e.g. xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)",
+    },
   },
 
   async run({ $ }) {
-    const API_ENDPOINT =
-      "https://usetrmnl.com/api/custom_plugins/de09e52a-095e-4c5c-b697-eb6b1aef11d2";
-
     const photos = this.message.photo;
     if (!photos || photos.length === 0) {
       throw new Error("No photo found in the message.");
     }
+    const API_ENDPOINT = `https://usetrmnl.com/api/custom_plugins/${this.plugin_url}`;
 
     const photo = photos[photos.length - 1];
     const fileInfo = await axios($, {
@@ -31,11 +35,12 @@ export default defineComponent({
       method: "GET",
       params: { file_id: photo.file_id },
     });
-    const filePath = fileInfo.result.file_path;
-    console.log(fileInfo);
-    if (filePath === undefined) {
-      throw new Error("Can't find the file!");
+
+    const filePath = fileInfo.result?.file_path;
+    if (!filePath) {
+      throw new Error("Can't find the file path from Telegram.");
     }
+
     const img_url =
       `https://api.telegram.org/file/bot${this.telegram_bot_api.$auth.token}/${filePath}`.trim();
 
