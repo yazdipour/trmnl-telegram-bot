@@ -29,11 +29,7 @@ It listens for incoming Telegram messages with images and captions, extracts the
 ## Available CSS Classes
 
 - `.invert` - Enhances image brightness and saturation
-- `.rotate90` - Rotates image 90° clockwise
-- `.rotate-90` - Rotates image 90° counterclockwise
-- `.fit` - Stretches image to fill entire screen
-- `.fitw` - Fits image to screen width
-- `.fith` - Fits image to screen height
+- `.rotate` - Rotates image 90° clockwise
 
 ---
 

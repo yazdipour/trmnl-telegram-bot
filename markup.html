@@ -1,37 +1,20 @@
 <style>
+  /* Default image fitting behavior */
+  img {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+  }
   /* Inviting base color tinting */
   .invert {
     filter: brightness(1.1) saturate(1.2);
     transition: all 0.3s ease-in-out;
   }
   /* Rotate 90 degrees clockwise */
-  .rotate90 {
+  .rotate {
     transform: rotate(90deg);
-  }
-  /* Rotate 90 degrees counterclockwise */
-  .rotate-90 {
-    transform: rotate(-90deg);
-  }
-
-  /* Stretch image to fill entire screen */
-  .fit {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-
-  /* Fit image to screen width */
-  .fitw {
-    width: 100vw;
-    height: auto;
-    object-fit: contain;
-  }
-
-  /* Fit image to screen height */
-  .fith {
-    height: 100vh;
-    width: auto;
-    object-fit: contain;
+    max-width: 100vh;
+    max-height: 100vw;
   }
 </style>
 <div class="screen screen--no-bleed">
