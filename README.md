@@ -4,6 +4,8 @@ This project lets you forward images from **Telegram** directly to a **TRMNL** d
 
 It listens for incoming Telegram messages with images and captions, extracts the image and formatting info (CSS classes and styles), then sends that to your TRMNL plugin.
 
+![trmnl telegram ipad send to ](./telegram-trmnl.jpg)
+
 ---
 
 ## ✨ What It Does
