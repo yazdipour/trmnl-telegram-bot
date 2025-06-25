@@ -33,6 +33,8 @@ It listens for incoming Telegram messages with images and captions, extracts the
 - `.invert` - Enhances image brightness and saturation
 - `.rotate` - Rotates image 90° clockwise
 
+![css classes](./css-class.png)
+
 ---
 
 ## 🚀 Setup Instructions
