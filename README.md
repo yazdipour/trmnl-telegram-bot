@@ -72,6 +72,8 @@ Save this for the Pipedream step.
 
 > You’ll use [Pipedream.com](https://pipedream.com) to glue it all together
 
+![pipedream](./pipe.png)
+
 #### Step A: Connect Telegram
 
 1. Go to [Pipedream Telegram integrations](https://pipedream.com/apps/telegram_bot_api)
