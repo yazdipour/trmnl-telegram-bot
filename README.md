@@ -50,7 +50,7 @@ It listens for incoming Telegram messages with images and captions, extracts the
 3. Click **“+ Add Plugin”**
 4. Choose **Custom Plugin** and create Private Plugin with Webhook.
 5. Copy your plugin’s UUID which you'll need it later.
-6. Setup Markup by copying the content of the [Markup.html](./markup.html)
+6. Setup Markup by copying the content of the [Markup.html](./markup/shared.html) (Can use it shared between different views)
 
 ---
 
